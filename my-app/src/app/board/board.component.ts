@@ -21,6 +21,9 @@ export class BoardComponent implements OnInit {
   @Input()
   player;
 
+  @Input()
+  highlight;
+
   ngOnInit() {
 
   }
@@ -29,4 +32,7 @@ export class BoardComponent implements OnInit {
     this.onClicked.emit({ row: row, col: col });
   }
 
+  convertRowColumnToIndices(row, column) {
+    return (row * 3 + column);
+  }
 }

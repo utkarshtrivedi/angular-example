@@ -14,7 +14,10 @@ export class GameComponent implements OnInit {
     ['', '', ''],
     ['', '', '']
   ];
-  winningIndices = null;
+  winner = {
+    status: null,
+    indices: []
+  };
 
   constructor() {
   }
@@ -32,18 +35,18 @@ export class GameComponent implements OnInit {
 
     this.squares[row][col] = this.player;
 
-    this.winningIndices = this.calculateWinner(this.squares);
+    this.winner = this.calculateWinner(this.squares);
 
     this.history.push({
       player: this.player,
       squares: this.squares,
       status: this.status,
-      highlight: this.winningIndices
+      highlight: this.winner.indices
     });
     this.player = this.player == 'X' ? 'O' : 'X';
 
-    if (this.winningIndices.status) {
-      this.status = this.winningIndices.status;
+    if (this.winner.status) {
+      this.status = this.winner.status;
     } else {
       this.status = 'Player: ' + this.player;
     }

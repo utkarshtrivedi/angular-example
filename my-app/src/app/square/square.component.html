@@ -1,3 +1,3 @@
-<button class="square" (click)="handleClick()">
+<button [ngClass]="{'red': highlight}" class="square" (click)="handleClick()">
     {{value}}
 </button>

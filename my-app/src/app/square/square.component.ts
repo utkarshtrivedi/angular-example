@@ -13,6 +13,9 @@ export class SquareComponent {
   @Output()
   onClicked = new EventEmitter();
 
+  @Input()
+  highlight = false;
+
   handleClick() {
     this.onClicked.emit();
   }
