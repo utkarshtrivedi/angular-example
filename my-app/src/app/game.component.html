@@ -1,0 +1,10 @@
+<div class="game">
+  <div class="game-board">
+    <board [squares]="squares" [player]="player" (onClicked)="handleClick($event)"></board>
+  </div>
+  <div class="game-info">
+    <div>{{status}}</div>
+    <!-- <ol>{this.state.isMoveAscending ? moves : moves.reverse()}</ol> -->
+    <!-- <div><button>Sort</button></div> -->
+  </div>
+</div>

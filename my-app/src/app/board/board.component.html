@@ -1,0 +1,5 @@
+<div>
+  <div class="board-row" *ngFor="let sqrRow of squares; let row = index">
+    <square [value]="sqr" (onClicked)="handleSquareClick(row, col)" *ngFor="let sqr of sqrRow; let col = index"></square>
+  </div>
+</div>
